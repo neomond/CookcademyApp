@@ -16,6 +16,7 @@
 		7AA0E4302C8E222D0025C010 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E42F2C8E222D0025C010 /* RecipeDetailView.swift */; };
 		7AA0E4322C8E2B800025C010 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E4312C8E2B800025C010 /* AppColor.swift */; };
 		7AA0E4342C8EE08C0025C010 /* RecipeCategoryGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E4332C8EE08C0025C010 /* RecipeCategoryGridView.swift */; };
+		7AA0E4382C9058990025C010 /* ModifyRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E4372C9058990025C010 /* ModifyRecipeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		7AA0E42F2C8E222D0025C010 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		7AA0E4312C8E2B800025C010 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		7AA0E4332C8EE08C0025C010 /* RecipeCategoryGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategoryGridView.swift; sourceTree = "<group>"; };
+		7AA0E4372C9058990025C010 /* ModifyRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyRecipeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +84,8 @@
 		7AA0E42A2C8E162C0025C010 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7AA0E41A2C8CE14C0025C010 /* RecipesListView.swift */,
-				7AA0E42F2C8E222D0025C010 /* RecipeDetailView.swift */,
-				7AA0E4332C8EE08C0025C010 /* RecipeCategoryGridView.swift */,
+				7AA0E4362C9057E70025C010 /* ModifyRecipes */,
+				7AA0E4352C9057CE0025C010 /* ExploreRecipes */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,6 +105,24 @@
 				7AA0E4312C8E2B800025C010 /* AppColor.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7AA0E4352C9057CE0025C010 /* ExploreRecipes */ = {
+			isa = PBXGroup;
+			children = (
+				7AA0E4332C8EE08C0025C010 /* RecipeCategoryGridView.swift */,
+				7AA0E41A2C8CE14C0025C010 /* RecipesListView.swift */,
+				7AA0E42F2C8E222D0025C010 /* RecipeDetailView.swift */,
+			);
+			path = ExploreRecipes;
+			sourceTree = "<group>";
+		};
+		7AA0E4362C9057E70025C010 /* ModifyRecipes */ = {
+			isa = PBXGroup;
+			children = (
+				7AA0E4372C9058990025C010 /* ModifyRecipeView.swift */,
+			);
+			path = ModifyRecipes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +199,7 @@
 				7AA0E4302C8E222D0025C010 /* RecipeDetailView.swift in Sources */,
 				7AA0E4342C8EE08C0025C010 /* RecipeCategoryGridView.swift in Sources */,
 				7AA0E42E2C8E178C0025C010 /* RecipeData.swift in Sources */,
+				7AA0E4382C9058990025C010 /* ModifyRecipeView.swift in Sources */,
 				7AA0E41B2C8CE14C0025C010 /* RecipesListView.swift in Sources */,
 				7AA0E4192C8CE14C0025C010 /* CookcademyApp.swift in Sources */,
 				7AA0E4322C8E2B800025C010 /* AppColor.swift in Sources */,
