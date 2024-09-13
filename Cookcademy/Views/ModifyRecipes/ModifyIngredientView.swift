@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ModifyIngredientView: View {
+struct ModifyIngredientView: ModifyComponentView {
     @Binding var ingredient: Ingredient
     @Environment(\.presentationMode) private var mode
     
@@ -15,6 +15,11 @@ struct ModifyIngredientView: View {
     
     private let listBackgroundColor = AppColor.background
     private let listTextColor = AppColor.foreground
+    
+    init(component: Binding<Ingredient>, createAction: @escaping (Ingredient) -> Void) {
+        self._ingredient = component
+        self.createAction = createAction
+      }
     
     var body: some View {
         VStack {
@@ -68,16 +73,18 @@ extension NumberFormatter {
     }
 }
 
-struct ModifyIngredientView_Preview: PreviewProvider {
-  @State static var emptyIngredient = Ingredient()
+struct ModifyIngredientView_Previews: PreviewProvider {
+  @State static var emptyIngredient = Recipe.testRecipes[0].ingredients[0]
+    
   static var previews: some View {
     NavigationView {
-      ModifyIngredientView(ingredient: $emptyIngredient) { ingredient in
+      ModifyIngredientView(component: $emptyIngredient) { ingredient in
         print(ingredient)
       }
-    }
+    }.navigationTitle("Add Ingredient")
   }
 }
+
 
 
 ///Because the ModifyIngredientView now gets its ingredient from a different view, we update its ingredient to be a @Binding instead of a @State property.
