@@ -27,47 +27,45 @@ struct RecipesListView: View {
     
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(recipes) { recipe in
-                    NavigationLink(recipe.mainInformation.name,
-                                   destination: RecipeDetailView(recipe: recipe))
-                }
-                .listRowBackground(listBackgroundColor)
-                .foregroundColor(listTextColor)
+        List {
+            ForEach(recipes) { recipe in
+                NavigationLink(recipe.mainInformation.name,
+                               destination: RecipeDetailView(recipe: binding(for: recipe)))
             }
-            .navigationTitle(navigationTitle)
-            .toolbar(content: {
-                ToolbarItem(placement: .navigationBarTrailing){
-                    Button {
-                        isPresenting = true
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                    
+            .listRowBackground(listBackgroundColor)
+            .foregroundColor(listTextColor)
+        }
+        .navigationTitle(navigationTitle)
+        .toolbar(content: {
+            ToolbarItem(placement: .navigationBarTrailing){
+                Button {
+                    isPresenting = true
+                } label: {
+                    Image(systemName: "plus")
                 }
-            })
-            .sheet(isPresented: $isPresenting, content: {
-                NavigationView {
-                    ModifyRecipeView(recipe: $newRecipe)
-                        .toolbar(content: {
-                            ToolbarItem(placement: .cancellationAction){
-                                Button("Dismiss"){
-                                    isPresenting = false
-                                }
+                
+            }
+        })
+        .sheet(isPresented: $isPresenting, content: {
+            NavigationView {
+                ModifyRecipeView(recipe: $newRecipe)
+                    .toolbar(content: {
+                        ToolbarItem(placement: .cancellationAction){
+                            Button("Dismiss"){
+                                isPresenting = false
                             }
-                            ToolbarItem(placement: .confirmationAction){
-                                if newRecipe.isValid { 
-                                    Button("Add"){
+                        }
+                        ToolbarItem(placement: .confirmationAction){
+                            if newRecipe.isValid {
+                                Button("Add"){
                                     recipeData.add(recipe: newRecipe)
                                     isPresenting = false
                                 }   }
-                            }
-                        })
-                        .navigationTitle("Add a New Recipe")
-                }
-            })
-        }
+                        }
+                    })
+                    .navigationTitle("Add a New Recipe")
+            }
+        })
     }
 }
 
@@ -80,6 +78,15 @@ extension RecipesListView {
     private var navigationTitle: String {
         "\(category.rawValue) Recipes"
     }
+    
+    func binding(for recipe: Recipe) -> Binding<Recipe> {
+        guard let index = recipeData.index(of: recipe) else {
+            fatalError("Recipe not found")
+        }
+        return $recipeData.recipes[index]
+    }
+    
+    /// A binding to a recipe in RecipeDetailView allows the view to modify the recipe directly. This is essential for the ModifyRecipeView to update the recipe in real-time. Without a binding, changes made in the ModifyRecipeView wouldn’t reflect in the original recipe data. Bindings ensure that the data stays consistent across different views.
 }
 
 #Preview {
