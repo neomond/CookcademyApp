@@ -22,6 +22,7 @@
 		7ADAF0152C9215E500FD3516 /* ModifyComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADAF0142C9215E500FD3516 /* ModifyComponentsView.swift */; };
 		7ADAF0172C93F9B000FD3516 /* ModifyDirectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADAF0162C93F9B000FD3516 /* ModifyDirectionView.swift */; };
 		7ADAF0192C958A5300FD3516 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADAF0182C958A5300FD3516 /* MainTabView.swift */; };
+		7ADAF01B2C98810D00FD3516 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADAF01A2C98810D00FD3516 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		7ADAF0142C9215E500FD3516 /* ModifyComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyComponentsView.swift; sourceTree = "<group>"; };
 		7ADAF0162C93F9B000FD3516 /* ModifyDirectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyDirectionView.swift; sourceTree = "<group>"; };
 		7ADAF0182C958A5300FD3516 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		7ADAF01A2C98810D00FD3516 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				7AA0E4362C9057E70025C010 /* ModifyRecipes */,
 				7AA0E4352C9057CE0025C010 /* ExploreRecipes */,
 				7ADAF0182C958A5300FD3516 /* MainTabView.swift */,
+				7ADAF01A2C98810D00FD3516 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				7ADAF0172C93F9B000FD3516 /* ModifyDirectionView.swift in Sources */,
 				7AA0E4382C9058990025C010 /* ModifyRecipeView.swift in Sources */,
 				7ADAF0152C9215E500FD3516 /* ModifyComponentsView.swift in Sources */,
+				7ADAF01B2C98810D00FD3516 /* SettingsView.swift in Sources */,
 				7ADAF0192C958A5300FD3516 /* MainTabView.swift in Sources */,
 				7AA0E41B2C8CE14C0025C010 /* RecipesListView.swift in Sources */,
 				7AA0E4192C8CE14C0025C010 /* CookcademyApp.swift in Sources */,
