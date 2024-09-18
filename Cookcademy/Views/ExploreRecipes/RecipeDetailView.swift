@@ -11,6 +11,8 @@ struct RecipeDetailView: View {
     @Binding var recipe: Recipe
     @State private var isPresenting = false
     
+    @EnvironmentObject var recipeData: RecipeData
+    
     @AppStorage("hideOptionalSteps") private var hideOptionalSteps: Bool = false
     @AppStorage("listBackgroundColor") private var listBackgroundColor = AppColor.background
     @AppStorage("listTextColor") private var listTextColor = AppColor.foreground
@@ -81,6 +83,9 @@ struct RecipeDetailView: View {
                         }
                     }
                     .navigationTitle("Edit Recipe")
+            }
+            .onDisappear() {
+                recipeData.saveRecipes()
             }
         }
     }

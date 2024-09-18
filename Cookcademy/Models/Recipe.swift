@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Recipe: Identifiable {
+struct Recipe: Identifiable, Codable {
     var id = UUID()
     var mainInformation: MainInformation
     var ingredients: [Ingredient]
@@ -38,13 +38,13 @@ struct Recipe: Identifiable {
     /// If excludingOptionalsDirections is true, then directions will include only the directions that are not optional. If excludingOptionalDirections is false, then directions will include all of the directions, including the optional ones. Then, it finds and returns the index that matches the description of the direction in the filtered directions array.
 }
 
-struct MainInformation {
+struct MainInformation: Codable {
     var name: String
     var description: String
     var author: String
     var category: Category
     
-    enum Category: String, CaseIterable {
+    enum Category: String, CaseIterable, Codable {
         case breakfast = "Breakfast"
         case lunch = "Lunch"
         case dinner = "Dinner"
@@ -90,7 +90,7 @@ struct Ingredient: RecipeComponent {
         }
     }
     
-    enum Unit: String, CaseIterable {
+    enum Unit: String, CaseIterable, Codable {
         case oz = "Ounces"
         case g = "Grams"
         case cups = "Cups"

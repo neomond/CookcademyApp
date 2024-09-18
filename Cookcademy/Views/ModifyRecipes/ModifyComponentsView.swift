@@ -12,7 +12,7 @@ protocol ModifyComponentView: View {
     init(component: Binding<Component>, createAction: @escaping (Component) -> Void)
 }
 
-protocol RecipeComponent: CustomStringConvertible {
+protocol RecipeComponent: CustomStringConvertible, Codable {
     init()
     static func singularName() -> String
     static func pluralName() -> String
